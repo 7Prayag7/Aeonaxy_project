@@ -3,10 +3,10 @@ import { sql } from '../index.js';
 import passport from 'passport';
 import bcrypt from 'bcrypt';
 import { Strategy } from 'passport-local';
-import flash from 'connect-flash';
+// import flash from 'connect-flash';
 
 const app = express();
-app.use(flash());
+// app.use(flash());
 
 const router = express.Router();
 const saltRounds = 10;
@@ -21,7 +21,7 @@ router.post('/login',
   passport.authenticate('superadmin', {
     successRedirect: '/superadmin/profile',
     failureRedirect: '/superadmin/login',
-    failureFlash: true // Enable flash messages for failure case
+    // failureFlash: true // Enable flash messages for failure case
   })
 );
 
