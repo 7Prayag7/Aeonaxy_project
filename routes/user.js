@@ -8,6 +8,10 @@ import fetch, { Headers } from 'node-fetch';
 global.fetch = fetch;
 global.Headers = Headers;
 
+import multer from 'multer';
+const multerStorage = multer.memoryStorage(); // Using memory storage for multer
+const upload = multer({ storage: multerStorage });
+
 const router = express.Router();
 const saltRounds = 10;
 const resend = new Resend('re_NWMx3czy_5fm2q1hrJ1bKkgFh5no1fdyD');
