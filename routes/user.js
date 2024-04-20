@@ -12,6 +12,14 @@ import multer from 'multer';
 const multerStorage = multer.memoryStorage(); // Using memory storage for multer
 const upload = multer({ storage: multerStorage });
 
+import {v2 as cloudinary} from 'cloudinary';
+          
+cloudinary.config({ 
+  cloud_name: 'dvant1jjc', 
+  api_key: '636321273633736', 
+  api_secret: 'h2niipy-GN4vMjcvBljveSmhd1s' 
+});
+
 const router = express.Router();
 const saltRounds = 10;
 const resend = new Resend('re_NWMx3czy_5fm2q1hrJ1bKkgFh5no1fdyD');
